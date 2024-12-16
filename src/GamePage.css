@@ -1,0 +1,95 @@
+/* General Page Layout */
+.game-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.turn-info,
+.game-result {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Game Board */
+.board {
+  display: grid;
+  /* grid-template-columns: repeat(3, 3fr);
+  gap: 5px; */
+  margin: 20px auto;
+  width: 300px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover:not([disabled]) {
+  background-color: #f1f1f1;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  color: #bbb;
+}
+
+.cell.X {
+  color: #007bff;
+}
+
+.cell.O {
+  color: #ff5733;
+}
+
+/* Back to Lobby Button */
+.back-to-lobby {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-lobby:hover {
+  background-color: #0056b3;
+}
+
+.back-to-lobby:active {
+  background-color: #003f7f;
+}

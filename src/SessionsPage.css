@@ -1,0 +1,111 @@
+/* SessionsPage.css */
+
+/* General Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove full-screen height and set margins for alignment */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+/* Header Styling */
+.user-stats-header {
+  text-align: center;
+}
+
+.user-stats-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.user-stats span {
+  font-size: 16px;
+  color: #555;
+  padding: 5px 10px;
+  background-color: #eaeaea;
+  border-radius: 4px;
+}
+
+/* Game Sessions List */
+h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.session-header h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
