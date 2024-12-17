@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from './components/UserContext';
 import io from 'socket.io-client';
 import './SessionsPage.css'; // Import the CSS file
-const address = 'http://eeth.pythonanywhere.com'
+const address = 'https://eeth.pythonanywhere.com'
 
 const socket = io(address); // Connect to the WebSocket server
 

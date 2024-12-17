@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useUser } from './components/UserContext'; // Import the useUser hook
 import { io } from 'socket.io-client';
 import './GamePage.css'; // Import the CSS file
-const address = 'http://eeth.pythonanywhere.com'
+const address = 'https://eeth.pythonanywhere.com'
 
 
 const GamePage = () => {
