@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from './components/UserContext';
 import io from 'socket.io-client';
 import './SessionsPage.css'; // Import the CSS file
+const address = 'http://127.0.0.1:5000'
 
-const socket = io('https://eeth1.pythonanywhere.com'); // Connect to the WebSocket server
+const socket = io(address); // Connect to the WebSocket server
 
 function SessionsPage() {
   const { user } = useUser();
@@ -16,7 +17,7 @@ function SessionsPage() {
   useEffect(() => {
     const fetchUserStats = async () => {
       try {
-        const response = await fetch(`https://eeth1.pythonanywhere.com/api/users/${user.username}`);
+        const response = await fetch(address+`/api/users/${user.username}`);
         const data = await response.json();
         setUserStats(data);
       } catch (error) {

@@ -1,14 +1,9 @@
-import eventlet
-eventlet.monkey_patch()
-
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from bcrypt import hashpw, gensalt, checkpw
 import json
 from sqlalchemy import text
-
-
 from flask_socketio import SocketIO, join_room, emit
 
 app = Flask(__name__)
@@ -17,7 +12,7 @@ CORS(app, origins="*")  # Enable CORS for all origins
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure SQLAlchemy (Ensure that this path is correct for your environment)
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://eeth1:191114056@eeth1.mysql.pythonanywhere-services.com/eeth1$tictactoe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tictactoe.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -355,6 +350,8 @@ def get_user_stats(username):
 
 # Main entry point
 if __name__ == "__main__":
+    
     with app.app_context():
         db.create_all()  # Create tables if not already created
     socketio.run(app, debug = True)
+    

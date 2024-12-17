@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useUser } from './components/UserContext'; // Import the useUser hook
 import { io } from 'socket.io-client';
 import './GamePage.css'; // Import the CSS file
+const address = 'http://127.0.0.1:5000'
 
 const GamePage = () => {
   const { sessionId } = useParams(); // Get sessionId from URL params
@@ -28,7 +29,7 @@ const GamePage = () => {
       return;
     }
 
-    const socket = io('https://eeth1.pythonanywhere.com', {
+    const socket = io(address, {
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
     });

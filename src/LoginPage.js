@@ -9,12 +9,13 @@ function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-
+  const address = 'http://127.0.0.1:5000'
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://eeth1.pythonanywhere.com/api/login', {
+      const response = await fetch(address+'/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

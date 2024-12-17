@@ -7,12 +7,13 @@ function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const address = 'http://127.0.0.1:5000'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://eeth1.pythonanywhere.com/api/register', {
+      const response = await fetch(address+'/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

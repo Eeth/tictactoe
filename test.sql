@@ -1,0 +1,1 @@
+DELETE FROM game_sessions WHERE id BETWEEN 1 AND 100;
