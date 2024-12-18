@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './components/UserContext';
 import io from 'socket.io-client';
-import './SessionsPage.css'; 
-const address = 'http://eeth1.pythonanywhere.com'
-// const address = 'http://localhost:5000'
+import './SessionsPage.css'; // Import the CSS file
+const address = 'https://eeth.pythonanywhere.com'
 
 const socket = io(address);
 
