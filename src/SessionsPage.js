@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './components/UserContext';
 import io from 'socket.io-client';
-import './SessionsPage.css'; // Import the CSS file
-const address = 'http://127.0.0.1:5000'
+import './SessionsPage.css'; 
+const address = 'http://eeth1.pythonanywhere.com'
+// const address = 'http://localhost:5000'
 
-const socket = io(address); // Connect to the WebSocket server
+const socket = io(address);
 
 function SessionsPage() {
   const { user } = useUser();

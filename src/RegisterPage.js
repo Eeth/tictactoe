@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './RegisterPage.css'; // Import the CSS file
+import './RegisterPage.css'; 
 
 function RegisterPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const address = 'http://127.0.0.1:5000'
+  const address = 'http://eeth1.pythonanywhere.com'
+  // const address = 'http://localhost:5000'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ function RegisterPage() {
       const data = await response.json();
 
       if (response.ok) {
-        navigate('/login'); // Redirect to login after successful registration
+        navigate('/login'); 
       } else {
         setError(data.error || 'Error registering user.');
       }

@@ -1,42 +1,41 @@
-/* General Page Layout */
 .game-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  animation: fadeIn 2s ease-in-out;
 }
 
-h1 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
+.game-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease-in-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .error-message {
   color: red;
-  font-size: 14px;
+  font-size: 1rem;
   margin-bottom: 15px;
 }
 
-.turn-info,
-.game-result {
-  font-size: 18px;
+.game-info {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ffffff;
   font-weight: bold;
-  color: #555;
-  margin: 10px 0;
+  text-align: center;
 }
 
-/* Game Board */
 .board {
   display: grid;
-  /* grid-template-columns: repeat(3, 3fr);
-  gap: 5px; */
-  margin: 20px auto;
-  width: 300px;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  margin: 10px 0;
 }
 
 .row {
@@ -44,52 +43,65 @@ h1 {
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
-  font-size: 36px;
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border: 2px solid #74ebd5;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  line-height: 100px;
-  border: 2px solid #ddd;
-  background-color: #fff;
+  color: #555;
+  transition: background 0.3s, transform 0.3s;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cell:hover:not([disabled]) {
-  background-color: #f1f1f1;
-}
-
-.cell:disabled {
-  cursor: not-allowed;
-  color: #bbb;
+.cell:hover {
+  background: #74ebd5;
+  transform: scale(1.05);
 }
 
 .cell.X {
-  color: #007bff;
+  color: #ff6f61;
 }
 
 .cell.O {
-  color: #ff5733;
+  color: #4c91ff;
 }
 
-/* Back to Lobby Button */
 .back-to-lobby {
-  margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #74ebd5;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
 .back-to-lobby:hover {
-  background-color: #0056b3;
+  background: #9face6;
 }
 
-.back-to-lobby:active {
-  background-color: #003f7f;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

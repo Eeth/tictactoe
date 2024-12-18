@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './components/UserContext';
-import './LoginPage.css'; // Import the CSS file
+import './LoginPage.css';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -9,13 +9,14 @@ function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const address = 'http://127.0.0.1:5000'
-  
+  // const address = 'http://localhost:5000';
+  const address = 'http://eeth1.pythonanywhere.com'
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(address+'/api/login', {
+      const response = await fetch(address + '/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,6 +41,19 @@ function LoginPage() {
 
   return (
     <div className="container">
+      <h1 className="game-title">
+        <span className="letter">T</span>
+        <span className="letter">i</span>
+        <span className="letter">c</span> 
+        <span className="space"></span>
+        <span className="letter">T</span>
+        <span className="letter">a</span>
+        <span className="letter">c</span>
+        <span className="space"></span>
+        <span className="letter">T</span>
+        <span className="letter">o</span>
+        <span className="letter">e</span>
+      </h1>
       <div className="card">
         <h2 className="title">Login</h2>
         <form onSubmit={handleSubmit} className="form">
