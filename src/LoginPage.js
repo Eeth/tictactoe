@@ -10,7 +10,7 @@ function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   // const address = 'http://localhost:5000';
-  const address = 'http://eeth1.pythonanywhere.com'
+  const address = 'https://eeth1.pythonanywhere.com'
 
   const handleSubmit = async (e) => {
     e.preventDefault();

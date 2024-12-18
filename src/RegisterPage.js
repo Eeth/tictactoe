@@ -7,7 +7,7 @@ function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const address = 'http://eeth1.pythonanywhere.com'
+  const address = 'https://eeth1.pythonanywhere.com'
   // const address = 'http://localhost:5000'
 
   const handleSubmit = async (e) => {
