@@ -3,8 +3,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useUser } from './components/UserContext';
 import { io } from 'socket.io-client';
-import './GamePage.css'; // Import the CSS file
-const address = 'https://eeth.pythonanywhere.com'
+import './GamePage.css';
+const address = 'https://eeth1.pythonanywhere.com'
+// const address = 'http://localhost:5000';
 
 
 const GamePage = () => {
